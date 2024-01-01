@@ -10,8 +10,8 @@
     --clr-main: #29a7e6; 
     --clr-accent: #facf24;
     --clr-neutral-light: #FFFFFF;
-    --clr-neutral-medium: #C7CFD1;
-    --clr-neutral-dark: #9AA5AC;
+    --clr-neutral-medium: #dee2e3;
+    --clr-neutral-dark: #2a2a2a;
 }
 
 .material-symbols-outlined {
@@ -31,6 +31,7 @@ html {
 
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 .wrapper {
@@ -75,7 +76,51 @@ nav ul li span {
     margin-block-end: 0.25rem;
 }
 
+@media screen and (min-width: 1000px) {
+    main {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
 main {
     background-color: var(--clr-neutral-medium);
     z-index: -1;
+    display: grid;
+}
+
+.projects {
+    --gap: 1rem;
+    grid-row: span 2;
+}
+
+.projects h2 {
+    margin: var(--gap);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap);
+    margin: var(--gap); 
+}
+
+.card {
+    --br: 10px;
+    padding: 1rem;
+    border-left: var(--br) solid var(--clr-accent);
+    border-radius: var(--br);
+    background-color: var(--clr-neutral-light);
+    box-shadow: 0px 2px 2px 0px rgba(152, 152, 152, 0.75);
+    width: 100%;
+    height: 250px;
+}
+
+.announcements {
+    background-color: blue;
+}
+
+.trending {
+    background-color: green;
 }
